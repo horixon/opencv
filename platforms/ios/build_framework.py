@@ -116,6 +116,10 @@ class Builder:
             "-parallelizeTargets",
             "-jobs", "4"
         ]
+
+        if target == 'iPhoneSimulator':
+            return buildcmd + ["PLATFORM_NAME=iphonesimulator","-destination 'platform=iOS Simulator,name=iPhone 6'"]
+
         return buildcmd
 
     def getInfoPlist(self, builddirs):
